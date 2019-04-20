@@ -82,7 +82,7 @@ class myCNN:
     accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
     saver = tf.train.Saver()  # defaults to saving all variables
     sess.run(tf.global_variables_initializer())
-    saver.restore(sess, "./model.ckpt")
+#    saver.restore(sess, "./model.ckpt")
     i=0
 
 
@@ -101,7 +101,7 @@ class myCNN:
                 print("step", i, "training accuracy", train_accuracy)
 
             self.train_step.run(feed_dict={self.x: batch[0], self.y_: batch[1], self.keep_prob: 0.5})
-        self.saver.save(self.sess, './model.ckpt')
+ #       self.saver.save(self.sess, './model.ckpt')
 
 
     @classmethod
